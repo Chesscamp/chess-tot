@@ -19,6 +19,17 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      width:{
+        "w-w":"90%",
+      },
+      height:{
+        "h":"6%"
+      },
+      backgroundColor:{
+        "cust-purple":"#6209CE",
+        "cust-brown":"#2D2D2D"
+
+      },
     },
   },
   plugins: [],
