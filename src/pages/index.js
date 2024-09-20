@@ -26,7 +26,7 @@ export default function Home() {
                 ut libero, tenetur voluptatum kndsb,amb mjnkl
               </p>
               <button className="w-full p-1 bg-cust-purple rounded-lg text-sm text-white">
-                <Link href="">Play now</Link>
+                <Link href="/landing">Play now</Link>
               </button>
             </div>
           </div>
@@ -39,7 +39,7 @@ export default function Home() {
               tenetur voluptatum iusto
             </p>
             <button className="w-full p-1 border border-black rounded-lg text-sm my-1">
-              <Link href="">Play now</Link>
+              <Link href="./landing">Play now</Link>
             </button>
           </div>
         </div>

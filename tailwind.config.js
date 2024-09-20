@@ -18,12 +18,15 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        leanground: "#F3EAF4",
       },
       width:{
         "w-w":"90%",
       },
       height:{
-        "h":"6%"
+        "h":"6%",
+        "h-h":"12%",
+        "f":"47%"
       },
       backgroundColor:{
         "cust-purple":"#6209CE",
