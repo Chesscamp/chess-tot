@@ -42,13 +42,15 @@ const Signup = () => {
   return (
     <div className="w-full m-auto ">
       <div className="flex  w-w-w m-auto move mt-2">
-        <IoMdArrowRoundBack />
+        <Link href="./login">
+          <IoMdArrowRoundBack />
+        </Link>
         <h1 className=" font-semibold ">Create an Account</h1>
       </div>
       <p className="text-xs flex justify-center mt-10">
-      Create your account . it takes less than a minute.<br/>
-      input your email and password
-
+        Create your account . it takes less than a minute.
+        <br />
+        input your email and password
       </p>
 
       <form
@@ -84,7 +86,6 @@ const Signup = () => {
           </button>
         </div>
 
-
         <div className="flex  w-full move justify-center">
           <div className="bg-black border w-2/5 h-1  " />
           <div>Or</div>
@@ -92,7 +93,7 @@ const Signup = () => {
         </div>
         <div className="mt-5 flex p-2  w-full ">
           <button className="border p-1 border-black rounded w-full ">
-           Sign up with Google
+            Sign up with Google
           </button>
         </div>
       </form>
