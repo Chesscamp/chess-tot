@@ -12,7 +12,7 @@ const landing = () => {
       <div className="w-w-w m-auto">
         <div className="flex w-1/6  justify-around">
           <div>
-            <Link href="">
+            <Link href="/">
               <IoMdArrowRoundBack className="text-sm" />
             </Link>
           </div>
