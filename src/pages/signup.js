@@ -31,11 +31,11 @@ const Signup = () => {
       console.log(registraion.data);
       alert("registraion successful -- now login in ");
     } catch (err) {
-      console.log(err.response);
-      setProcessing(false);
-      alert("registraion failed");
-      let errormessage = JSON.stringify(err.response.data.message);
-      setErrormessage(errormessage);
+      // console.log(err.response);
+      // setProcessing(false);
+      // alert("registraion failed");
+      // let errormessage = JSON.stringify(err.response.data.message);
+      // setErrormessage(errormessage);
     }
   };
 
@@ -75,16 +75,20 @@ const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="mt-5 flex p-2  w-full ">
-          <button
-            className="border p-1 border-black rounded w-full bg-cust-purple text-white "
-            onClick={handleSubmit}
-            disabled={processing}
-            type="submit"
-          >
-            {processing ? "Registering..." : "Create an Account"}
-          </button>
-        </div>
+        <Link href="./confirmation2" className="mt-5 flex p-2  w-full ">
+          <div className="mt-5 flex p-2  w-full ">
+            <button
+              className="border p-1 border-black rounded w-full bg-cust-purple text-white "
+              onClick={handleSubmit}
+              disabled={processing}
+              type="submit"
+            >
+              {" "}
+              Create an Account
+              {/* {processing ? "Registering..." : "Create an Account"} */}
+            </button>
+          </div>
+        </Link>
 
         <div className="flex  w-full move justify-center">
           <div className="bg-black border w-2/5 h-1  " />
@@ -101,13 +105,6 @@ const Signup = () => {
   );
 };
 
-//   <button
-//     className="border px-2 border-black rounded  "
-//     type="submit"
-//     disabled={processing}
-//   >
-//     {processing ? "Registering..." : "Register"}
-//   </button>
 export default Signup;
 
 Signup.getLayout = function PageLayout(page) {

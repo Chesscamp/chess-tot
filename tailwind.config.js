@@ -22,11 +22,14 @@ module.exports = {
       },
       width:{
         "w-w":"90%",
+        
       },
       height:{
         "h":"6%",
         "h-h":"12%",
-        "f":"47%"
+        "f":"47%",
+        "h-m":"95vh",
+        "h-f":"50vh",
       },
       backgroundColor:{
         "cust-purple":"#6209CE",

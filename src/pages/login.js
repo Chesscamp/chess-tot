@@ -44,12 +44,12 @@ const Login = () => {
         setProcessing(false);
       }
     } catch (err) {
-      console.log(err.response);
-      setProcessing(false);
-      alert("login failed");
-      let errmeg = JSON.stringify(err.response.data.message);
+      // console.log(err.response);
+      // setProcessing(false);
+      // alert("login failed");
+      // let errmeg = JSON.stringify(err.response.data.message);
 
-      setErrormessage(errmeg);
+      // setErrormessage(errmeg);
     }
   };
 

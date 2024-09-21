@@ -11,7 +11,7 @@ export default function Home() {
       <div className="flex flex-col h-11/12  w-11/12 justify-around m-auto  border h-screen ">
         <div className="w-5/6 m-auto h-h flex">
           <div className="w-1/2 h-full bg-black rounded-3xl flex justify-around items-center ">
-            <Link href=''>
+            <Link href='./login'>
               <CgProfile className="text-white" />
             </Link>
             <p className="text-xs text-white">Name here</p>
