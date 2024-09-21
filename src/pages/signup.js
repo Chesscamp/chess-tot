@@ -1,55 +1,41 @@
+// pages/signup.js
 import React from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import { global } from "styled-jsx/css";
 
-const Login = () => {
+const Signup = () => {
   const baseUrl = "";
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const [processing, setProcessing] = useState(false);
   const [errormessage, setErrormessage] = useState("");
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
+
+    // Prepare the data to be sent to the backend
     const userData = {
       email,
       password,
     };
+
     try {
-      const registration = await axios.request({
+      const registraion = await axios.request({
         url: baseUrl + "",
         method: "POST",
-
-        data: {
-          email: userData.email,
-          password: userData.password,
-        },
+        data: userData,
       });
-      const data = registration.data.data;
-      console.log(data);
-
-      if (data) {
-        localStorage.setItem("token", data.token);
-        window.location.href = "/userpage";
-        setProcessing(false);
-        alert("login successful");
-        // Redirect to the logged-in page
-      } else {
-        setError("Invalid email or password");
-        setProcessing(false);
-      }
+      setProcessing(false);
+      console.log(registraion.data);
+      alert("registraion successful -- now login in ");
     } catch (err) {
       console.log(err.response);
       setProcessing(false);
-      alert("login failed");
-      let errmeg = JSON.stringify(err.response.data.message);
-
-      setErrormessage(errmeg);
+      alert("registraion failed");
+      let errormessage = JSON.stringify(err.response.data.message);
+      setErrormessage(errormessage);
     }
   };
 
@@ -57,17 +43,17 @@ const Login = () => {
     <div className="w-full m-auto ">
       <div className="flex  w-w-w m-auto move mt-2">
         <IoMdArrowRoundBack />
-        <h1 className=" font-semibold ">Login</h1>
+        <h1 className=" font-semibold ">Create an Account</h1>
       </div>
       <p className="text-xs flex justify-center mt-10">
-        Log in to challenge your friends, improve your game, <br />
-        and explore endless chess possibilities. your next great <br />
-        match awaits
+      Create your account . it takes less than a minute.<br/>
+      input your email and password
+
       </p>
 
       <form
         className=" p-2 w-full  items-center flex  flex-col"
-        onSubmit={handleLogin}
+        onSubmit={handleSubmit}
       >
         <div className="m-2 w-full">
           <input
@@ -90,15 +76,15 @@ const Login = () => {
         <div className="mt-5 flex p-2  w-full ">
           <button
             className="border p-1 border-black rounded w-full bg-cust-purple text-white "
-            onClick={handleLogin}
+            onClick={handleSubmit}
             disabled={processing}
+            type="submit"
           >
-            {processing ? "Processing..." : "Login"}
+            {processing ? "Registering..." : "Create an Account"}
           </button>
         </div>
-        <p>
-          <Link href="">Forgot password</Link>
-        </p>
+
+
         <div className="flex  w-full move justify-center">
           <div className="bg-black border w-2/5 h-1  " />
           <div>Or</div>
@@ -106,9 +92,7 @@ const Login = () => {
         </div>
         <div className="mt-5 flex p-2  w-full ">
           <button className="border p-1 border-black rounded w-full ">
-            <Link href='./signup'>
-           Create an Account 
-            </Link>
+           Sign up with Google
           </button>
         </div>
       </form>
@@ -116,13 +100,15 @@ const Login = () => {
   );
 };
 
-export default Login;
+//   <button
+//     className="border px-2 border-black rounded  "
+//     type="submit"
+//     disabled={processing}
+//   >
+//     {processing ? "Registering..." : "Register"}
+//   </button>
+export default Signup;
 
-Login.getLayout = function PageLayout(page) {
-  return (
-    <>
-      {page}
-      <Footer />
-    </>
-  );
+Signup.getLayout = function PageLayout(page) {
+  return <>{page}</>;
 };
